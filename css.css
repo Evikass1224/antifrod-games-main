@@ -30,7 +30,6 @@ body {
   position: relative;
 }
 
-/* subtle dot grid */
 body::before {
   content: '';
   position: fixed;
@@ -42,7 +41,6 @@ body::before {
   opacity: .5;
 }
 
-/* soft colour orbs */
 .orb {
   position: fixed;
   border-radius: 50%;
@@ -60,7 +58,6 @@ body::before {
   to   { transform: translate(30px,30px) scale(1.1); }
 }
 
-/* ── card ── */
 .card {
   position: relative;
   z-index: 1;
@@ -89,7 +86,6 @@ body::before {
   50%      { filter: drop-shadow(0 0 18px #00c8e8cc) drop-shadow(0 0 36px #00c8e844); }
 }
 
-/* ── title ── */
 .title {
   font-family: 'Russo One', sans-serif;
   font-size: clamp(1.35rem, 4vw, 1.85rem);
@@ -97,16 +93,18 @@ body::before {
   text-align: center;
   letter-spacing: .02em;
   margin-bottom: 10px;
-  background: linear-gradient(135deg, #0099cc 0%, #00c8e8 35%, #7c4dff 70%, #d400a0 70%, #0099cc 100%);
+  background: linear-gradient(135deg, #14e8ff, #0099cc, #4d9fff, #7c4dff, #00c8e8, #0099cc, #14e8ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: titleShimmer 6s linear infinite;
   background-size: 200% auto;
+  animation: titleShimmer 8s linear infinite;
 }
 @keyframes titleShimmer {
-  from { background-position: 0% center; }
-  to   { background-position: 200% center; }
+  0%   { background-position: 0% 0%; }
+  50%  { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
 }
 
 .subtitle {
@@ -128,7 +126,6 @@ body::before {
   border-radius: 2px;
 }
 
-/* ── buttons ── */
 .btn-list {
   display: flex;
   flex-direction: column;
@@ -209,7 +206,7 @@ body::before {
 
 .btn-label { flex: 1; text-align: left; }
 .btn-arrow {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   opacity: .3;
   color: var(--text);
   transition: opacity .2s, transform .2s;
@@ -235,7 +232,6 @@ body::before {
 .badge-new   { background: #ff4ecd; color: #fff; }
 .badge-hot   { background: #ff5a1f; color: #fff; }
 
-/* ── footer ── */
 .footer-note {
   position: relative;
   z-index: 1;
@@ -247,7 +243,6 @@ body::before {
 }
 .footer-note strong { color: #0099cc; }
 
-/* ── entrance animations ── */
 .card { animation: cardIn .7s cubic-bezier(.22,1,.36,1) both; }
 @keyframes cardIn {
   from { opacity:0; transform: translateY(32px) scale(.97); }
